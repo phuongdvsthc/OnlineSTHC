@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Menu, X, BookOpen, GraduationCap, PhoneCall, HelpCircle, ShieldAlert } from "lucide-react";
-import { ConsultationInquiry } from "../types";
+import { Menu, X, BookOpen, GraduationCap, PhoneCall, HelpCircle } from "lucide-react";
 
 interface NavbarProps {
-  currentView: "home" | "courses" | "detail" | "admin";
-  onNavigate: (view: "home" | "courses" | "detail" | "admin", courseId?: string) => void;
+  currentView: "home" | "courses" | "detail";
+  onNavigate: (view: "home" | "courses" | "detail", courseId?: string) => void;
 }
 
 export default function Navbar({ currentView, onNavigate }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [inquiryCount, setInquiryCount] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,30 +16,12 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
     };
     window.addEventListener("scroll", handleScroll);
 
-    // Sync inquiry count for badge
-    const syncInquiryCount = () => {
-      try {
-        const stored = localStorage.getItem("saigontourist_inquiries");
-        if (stored) {
-          const parsed = JSON.parse(stored) as ConsultationInquiry[];
-          const pending = parsed.filter(i => i.status === "Chờ liên hệ").length;
-          setInquiryCount(pending);
-        }
-      } catch (e) {
-        console.error(e);
-      }
-    };
-
-    syncInquiryCount();
-    const interval = setInterval(syncInquiryCount, 2000);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      clearInterval(interval);
     };
   }, []);
 
-  const handleLinkClick = (view: "home" | "courses" | "admin", anchorId?: string) => {
+  const handleLinkClick = (view: "home" | "courses", anchorId?: string) => {
     setIsOpen(false);
     onNavigate(view);
     if (anchorId) {
@@ -117,23 +97,6 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
             >
               FAQ
             </button>
-            <button
-              id="nav-link-admin"
-              onClick={() => handleLinkClick("admin")}
-              className={`px-4.5 py-2.5 text-sm sm:text-base font-semibold rounded-md transition-colors flex items-center space-x-1.5 ${
-                currentView === "admin"
-                  ? "text-amber-800 bg-amber-50"
-                  : "text-gray-500 hover:text-amber-700 hover:bg-neutral-50"
-              }`}
-            >
-              <ShieldAlert className="w-4.5 h-4.5" />
-              <span>Admin</span>
-              {inquiryCount > 0 && (
-                <span className="bg-blue-600 text-white text-[11px] font-bold px-1.5 py-0.5 rounded-full animate-pulse">
-                  {inquiryCount}
-                </span>
-              )}
-            </button>
           </nav>
 
           {/* Desktop CTA Action Button */}
@@ -151,9 +114,6 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
 
           {/* Mobile Menu Trigger */}
           <div className="md:hidden flex items-center space-x-2">
-            {inquiryCount > 0 && currentView !== "admin" && (
-              <span className="w-2.5 h-2.5 bg-blue-600 rounded-full animate-ping"></span>
-            )}
             <button
               id="mobile-menu-toggle"
               onClick={() => setIsOpen(!isOpen)}
@@ -204,23 +164,6 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
           >
             <HelpCircle className="w-5.5 h-5.5 text-blue-700" />
             <span>Câu hỏi thường gặp</span>
-          </button>
-          <button
-            id="mobile-nav-link-admin"
-            onClick={() => handleLinkClick("admin")}
-            className={`w-full text-left px-4 py-3.5 text-base sm:text-lg font-bold rounded-md flex items-center justify-between ${
-              currentView === "admin" ? "bg-amber-50 text-amber-900" : "text-gray-700 hover:bg-neutral-50"
-            }`}
-          >
-            <div className="flex items-center space-x-3.5">
-              <ShieldAlert className="w-5.5 h-5.5 text-amber-700" />
-              <span>Hệ thống Quản lý (Admin)</span>
-            </div>
-            {inquiryCount > 0 && (
-              <span className="bg-blue-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">
-                {inquiryCount} mới
-              </span>
-            )}
           </button>
           <div className="pt-3 border-t border-gray-100">
             <button

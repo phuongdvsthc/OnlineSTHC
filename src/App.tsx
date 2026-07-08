@@ -4,12 +4,11 @@ import Footer from "./components/Footer";
 import LandingPage from "./components/LandingPage";
 import CourseListingPage from "./components/CourseListingPage";
 import CourseDetailPage from "./components/CourseDetailPage";
-import AdminDashboard from "./components/AdminDashboard";
 import { courses } from "./data/courses";
 import { AnimatePresence, motion } from "motion/react";
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<"home" | "courses" | "detail" | "admin">("home");
+  const [currentView, setCurrentView] = useState<"home" | "courses" | "detail">("home");
   const [selectedCourseId, setSelectedCourseId] = useState<string>("latte-art-pro");
 
   // Keep scroll positions at the top when views change
@@ -17,7 +16,7 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: "instant" as any });
   }, [currentView, selectedCourseId]);
 
-  const handleNavigate = (view: "home" | "courses" | "detail" | "admin", courseId?: string) => {
+  const handleNavigate = (view: "home" | "courses" | "detail", courseId?: string) => {
     if (courseId) {
       setSelectedCourseId(courseId);
     }
@@ -56,10 +55,6 @@ export default function App() {
                 course={getActiveCourse()}
                 onBack={() => handleNavigate("courses")}
               />
-            )}
-            
-            {currentView === "admin" && (
-              <AdminDashboard />
             )}
           </motion.div>
         </AnimatePresence>

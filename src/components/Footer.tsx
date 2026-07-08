@@ -2,7 +2,7 @@ import React from "react";
 import { Mail, Phone, MapPin, Award, Shield, Facebook, Youtube, ExternalLink } from "lucide-react";
 
 interface FooterProps {
-  onNavigate: (view: "home" | "courses" | "detail" | "admin", courseId?: string) => void;
+  onNavigate: (view: "home" | "courses" | "detail", courseId?: string) => void;
 }
 
 export default function Footer({ onNavigate }: FooterProps) {
@@ -107,14 +107,6 @@ export default function Footer({ onNavigate }: FooterProps) {
                 <span className="text-[11px] text-neutral-300 leading-tight">
                   Bảo chứng uy tín từ Saigontourist Group thương hiệu du lịch quốc gia
                 </span>
-              </div>
-              <div className="pt-2">
-                <button
-                  onClick={() => onNavigate("admin")}
-                  className="text-xs text-neutral-500 hover:text-amber-500 transition-colors flex items-center space-x-1"
-                >
-                  <span>Hệ thống Quản lý Đăng ký (Admin View)</span>
-                </button>
               </div>
             </div>
           </div>
