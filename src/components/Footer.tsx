@@ -9,7 +9,7 @@ export default function Footer({ onNavigate }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="main-footer" className="bg-neutral-900 text-neutral-300 border-t border-neutral-800">
+    <footer id="main-footer" className="text-neutral-300 border-t border-neutral-800" style={{ backgroundColor: "#162937" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand and Description */}
@@ -18,7 +18,8 @@ export default function Footer({ onNavigate }: FooterProps) {
               <img
                 src="/src/assets/images/regenerated_image_1783479369142.png"
                 alt="STHC Logo"
-                className="w-10 h-10 object-contain rounded"
+                className="object-contain rounded"
+                style={{ width: "180px", height: "80px" }}
                 referrerPolicy="no-referrer"
               />
             </div>
