@@ -123,7 +123,7 @@ export default function CourseListingPage({ onNavigate }: CourseListingPageProps
   };
 
   return (
-    <div id="course-listing-container" className="pt-24 pb-16 bg-neutral-50/50 min-h-screen">
+    <div id="course-listing-container" className="pt-24 pb-16 bg-gradient-to-tr from-neutral-55 via-slate-50 to-[#fdfaf2] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Banner header title */}
         <div className="text-center md:text-left space-y-3 mb-8">

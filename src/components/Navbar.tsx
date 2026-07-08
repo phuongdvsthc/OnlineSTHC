@@ -4,7 +4,7 @@ import sthcLogo from "../assets/images/regenerated_image_1783479369142.png";
 
 interface NavbarProps {
   currentView: "home" | "courses" | "detail";
-  onNavigate: (view: "home" | "courses" | "detail", courseId?: string) => void;
+  onNavigate: (view: "home" | "courses" | "detail", courseId?: string, anchorId?: string) => void;
 }
 
 export default function Navbar({ currentView, onNavigate }: NavbarProps) {
@@ -24,15 +24,7 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
 
   const handleLinkClick = (view: "home" | "courses", anchorId?: string) => {
     setIsOpen(false);
-    onNavigate(view);
-    if (anchorId) {
-      setTimeout(() => {
-        const el = document.getElementById(anchorId);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 100);
-    }
+    onNavigate(view, undefined, anchorId);
   };
 
   return (
@@ -40,8 +32,8 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
       id="main-navbar"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-md py-3.5 border-b border-blue-100"
-          : "bg-white py-4.5 border-b border-gray-100"
+          ? "bg-gray-100/85 backdrop-blur-md shadow-md py-3.5 border-b border-gray-200/65"
+          : "bg-gray-100/75 backdrop-blur-md py-4.5 border-b border-gray-200/40"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -129,7 +121,7 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
 
       {/* Mobile Drawer Navigation */}
       {isOpen && (
-        <div id="mobile-menu-drawer" className="md:hidden bg-white border-t border-gray-100 shadow-xl py-4 px-4 space-y-2.5 absolute top-full left-0 right-0 z-50">
+        <div id="mobile-menu-drawer" className="md:hidden bg-gray-100/95 backdrop-blur-md border-t border-gray-200 shadow-xl py-4 px-4 space-y-2.5 absolute top-full left-0 right-0 z-50">
           <button
             id="mobile-nav-link-home"
             onClick={() => handleLinkClick("home")}

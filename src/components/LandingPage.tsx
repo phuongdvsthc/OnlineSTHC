@@ -78,7 +78,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
   return (
     <div id="landing-page-container" className="pt-20">
       {/* 1. HERO SECTION */}
-      <section id="hero-section" className="bg-gradient-to-b from-blue-50/40 via-white to-white py-16 lg:py-24 overflow-hidden border-b border-gray-50">
+      <section id="hero-section" className="bg-gradient-to-tr from-[#f0f6ff] via-white to-[#fbf8ee] py-16 lg:py-24 overflow-hidden border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column Text */}
@@ -199,7 +199,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
       </section>
 
       {/* 3. TRAINING OBJECTIVES */}
-      <section id="objectives-section" className="py-20 bg-neutral-50/50">
+      <section id="objectives-section" className="py-20 bg-gradient-to-b from-white via-blue-50/20 to-neutral-50/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
             <h2 className="font-serif font-bold text-3xl sm:text-4xl text-neutral-900">Mục Tiêu Đào Tạo / Học Để Làm Gì?</h2>
@@ -236,7 +236,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
       </section>
 
       {/* 4. PAIN POINTS */}
-      <section id="problems-section" className="py-20 bg-white">
+      <section id="problems-section" className="py-20 bg-gradient-to-tr from-slate-50/60 via-white to-[#fdf9f0]/40 border-b border-gray-100/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Image */}
@@ -283,7 +283,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
       </section>
 
       {/* 5. WHY CHOOSE US */}
-      <section id="why-choose-us-section" className="py-20 bg-neutral-900 text-white relative overflow-hidden">
+      <section id="why-choose-us-section" className="py-20 bg-gradient-to-br from-neutral-950 via-neutral-900 to-[#0c1e30] text-white relative overflow-hidden">
         {/* Abstract background graphics */}
         <div className="absolute top-0 right-0 w-80 h-80 bg-blue-800/20 rounded-full filter blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-600/10 rounded-full filter blur-3xl"></div>
@@ -315,7 +315,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
       </section>
 
       {/* 6. COURSE CATEGORIES EXPLORER */}
-      <section id="course-categories-section" className="py-20 bg-neutral-50/30">
+      <section id="course-categories-section" className="py-20 bg-gradient-to-b from-neutral-50/60 via-white to-slate-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div className="space-y-3 text-center md:text-left">
@@ -399,7 +399,10 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                       </span>
                     </div>
 
-                    <h3 className="font-serif font-bold text-lg sm:text-xl text-neutral-900 leading-snug group-hover:text-blue-800 transition-colors line-clamp-2 min-h-[52px]">
+                    <h3 
+                      className="font-serif font-bold text-lg sm:text-xl text-neutral-900 leading-snug group-hover:text-blue-800 transition-colors line-clamp-2 min-h-[52px]"
+                      style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                    >
                       {course.title}
                     </h3>
                     
@@ -446,13 +449,18 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
       </section>
 
       {/* 7. ONLINE LEARNING EXPERIENCE */}
-      <section id="experience-section" className="py-20 bg-white">
+      <section id="experience-section" className="py-20 bg-gradient-to-l from-white via-slate-50 to-[#fdfaf2]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content Column */}
             <div className="lg:col-span-6 space-y-6">
               <div className="space-y-2">
-                <h2 className="font-serif font-bold text-3xl sm:text-4xl text-neutral-900 leading-tight">Trải Nghiệm Học Trực Tuyến Đỉnh Cao</h2>
+                <h2 
+                  className="font-serif font-bold text-3xl sm:text-4xl text-neutral-900 leading-tight"
+                  style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                >
+                  Trải Nghiệm Học Trực Tuyến Đỉnh Cao
+                </h2>
                 <div className="w-16 h-1 bg-blue-800 rounded"></div>
               </div>
               <p className="text-gray-650 text-sm sm:text-base leading-relaxed font-sans">
@@ -517,7 +525,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
       </section>
 
       {/* 8. CORPORATE PARTNERS */}
-      <section id="partners-section" className="py-16 bg-neutral-50/50 border-y border-gray-100">
+      <section id="partners-section" className="py-16 bg-gradient-to-r from-neutral-50/80 via-white to-neutral-50/80 border-y border-gray-150">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
           <div className="space-y-1">
             <h2 className="text-xs uppercase font-bold tracking-widest text-gray-400">Học đúng kỹ năng doanh nghiệp đang cần</h2>
@@ -536,10 +544,15 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
       </section>
 
       {/* 9. TESTIMONIALS CAROUSEL */}
-      <section id="testimonials-section" className="py-20 bg-white">
+      <section id="testimonials-section" className="py-20 bg-gradient-to-b from-white via-[#fcfbf7]/40 to-neutral-50/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
-            <h2 className="font-serif font-bold text-3xl sm:text-4xl text-neutral-900">Học Viên Nói Gì Về Chúng Tôi</h2>
+            <h2 
+              className="font-serif font-bold text-3xl sm:text-4xl text-neutral-900"
+              style={{ fontFamily: "'Times New Roman', Times, serif" }}
+            >
+              Học Viên Nói Gì Về Chúng Tôi
+            </h2>
             <div className="w-16 h-1 bg-blue-800 mx-auto rounded"></div>
             <p className="text-sm sm:text-base text-gray-500 font-sans">
               Câu chuyện thành công từ những người học đi trước đã thay đổi thu nhập và cơ hội nghề nghiệp nhờ kiến thức thực tiễn của Saigontourist.
@@ -600,7 +613,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
       </section>
 
       {/* 10. FAQS ACCORDION */}
-      <section id="faq-section" className="py-20 bg-neutral-50/50">
+      <section id="faq-section" className="py-20 bg-gradient-to-tr from-neutral-50 via-white to-[#f0f6fc]/20 border-b border-gray-150/40">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-3 mb-12">
             <h2 className="font-serif font-bold text-3xl text-neutral-900">Câu Hỏi Thường Gặp (FAQ)</h2>
@@ -642,10 +655,15 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
       </section>
 
       {/* 11. INSTRUCTORS SECTION ON HOME */}
-      <section id="instructors-section" className="py-20 bg-white border-t border-gray-50">
+      <section id="instructors-section" className="py-20 bg-gradient-to-b from-white via-slate-50 to-neutral-50 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
-            <h2 className="font-serif font-bold text-3xl sm:text-4xl text-neutral-900">Đội Ngũ Giảng Viên Hướng Dẫn</h2>
+            <h2 
+              className="font-serif font-bold text-3xl sm:text-4xl text-neutral-900"
+              style={{ fontFamily: "'Times New Roman', Times, serif" }}
+            >
+              Đội Ngũ Giảng Viên Hướng Dẫn
+            </h2>
             <div className="w-16 h-1 bg-blue-800 mx-auto rounded"></div>
             <p className="text-sm sm:text-base text-gray-500 font-sans font-medium">
               Học trực tiếp từ những nghệ nhân, chuyên gia xuất sắc và các Bếp trưởng sở hữu thâm niên thực tế đồ sộ tại các tập đoàn khách sạn 5 sao.
@@ -665,7 +683,12 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                   referrerPolicy="no-referrer"
                 />
                 <div className="text-center space-y-1">
-                  <h3 className="font-serif font-bold text-base sm:text-lg text-neutral-900">{inst.name}</h3>
+                  <h3 
+                    className="font-serif font-bold text-base sm:text-lg text-neutral-900"
+                    style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                  >
+                    {inst.name}
+                  </h3>
                   <p className="text-[11px] uppercase font-extrabold tracking-wider text-amber-600">{inst.title}</p>
                 </div>
                 <p className="text-[12px] text-gray-500 line-clamp-3 leading-relaxed text-center font-sans">
@@ -682,7 +705,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
       </section>
 
       {/* 12. CONSULTATION FORM CONTAINER SECTION */}
-      <section id="consultation-form-section" className="py-20 bg-neutral-50">
+      <section id="consultation-form-section" className="py-20 bg-gradient-to-tr from-blue-50 via-white to-[#fdf8ee] border-t border-blue-100/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Consultation Left Details */}

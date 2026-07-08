@@ -4,21 +4,42 @@ import Footer from "./components/Footer";
 import LandingPage from "./components/LandingPage";
 import CourseListingPage from "./components/CourseListingPage";
 import CourseDetailPage from "./components/CourseDetailPage";
+import ZaloButton from "./components/ZaloButton";
 import { courses } from "./data/courses";
 import { AnimatePresence, motion } from "motion/react";
 
 export default function App() {
   const [currentView, setCurrentView] = useState<"home" | "courses" | "detail">("home");
   const [selectedCourseId, setSelectedCourseId] = useState<string>("latte-art-pro");
+  const [pendingAnchor, setPendingAnchor] = useState<string | null>(null);
 
-  // Keep scroll positions at the top when views change
+  // Keep scroll positions at the top when views change (unless scrolling to an anchor)
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" as any });
-  }, [currentView, selectedCourseId]);
+    if (!pendingAnchor) {
+      window.scrollTo({ top: 0, behavior: "instant" as any });
+    }
+  }, [currentView, selectedCourseId, pendingAnchor]);
 
-  const handleNavigate = (view: "home" | "courses" | "detail", courseId?: string) => {
+  // Handle scrolling to the pending anchor once the home view is active
+  useEffect(() => {
+    if (pendingAnchor) {
+      const timer = setTimeout(() => {
+        const el = document.getElementById(pendingAnchor);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        setPendingAnchor(null);
+      }, currentView === "home" ? 150 : 350); // Shorter wait if already on home, longer if transitioning
+      return () => clearTimeout(timer);
+    }
+  }, [currentView, pendingAnchor]);
+
+  const handleNavigate = (view: "home" | "courses" | "detail", courseId?: string, anchorId?: string) => {
     if (courseId) {
       setSelectedCourseId(courseId);
+    }
+    if (anchorId) {
+      setPendingAnchor(anchorId);
     }
     setCurrentView(view);
   };
@@ -62,6 +83,9 @@ export default function App() {
 
       {/* Corporate Accreditation Footer */}
       <Footer onNavigate={handleNavigate} />
+
+      {/* Floating Zalo Chat Button */}
+      <ZaloButton />
     </div>
   );
 }

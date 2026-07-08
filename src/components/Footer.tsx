@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Award, Shield, Facebook, Youtube, ExternalLink } f
 import sthcLogo from "../assets/images/regenerated_image_1783479369142.png";
 
 interface FooterProps {
-  onNavigate: (view: "home" | "courses" | "detail", courseId?: string) => void;
+  onNavigate: (view: "home" | "courses" | "detail", courseId?: string, anchorId?: string) => void;
 }
 
 export default function Footer({ onNavigate }: FooterProps) {
@@ -25,7 +25,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               />
             </div>
             <p className="text-neutral-400 text-xs leading-relaxed max-w-sm">
-              Trực thuộc Trường Cao đẳng Du lịch Sài Gòn (Saigontourist Hospitality College), tự hào là đơn vị tiên phong với hơn 35 năm kinh nghiệm đào tạo thực tiễn nguồn nhân lực chất lượng cao cho ngành Du lịch - Khách sạn và Ẩm thực Việt Nam.
+              Trường Trung cấp Du lịch và Khách sạn Saigontourist (Saigontourist Hospitality College), tự hào là đơn vị tiên phong với hơn 37 năm kinh nghiệm đào tạo thực tiễn nguồn nhân lực chất lượng cao cho ngành Du lịch - Khách sạn và Ẩm thực Việt Nam.
             </p>
             <div className="flex space-x-3 pt-2">
               <a href="#" className="w-9 h-9 rounded-full bg-neutral-800 hover:bg-blue-800 hover:text-white flex items-center justify-center transition-colors text-neutral-400" aria-label="Facebook">

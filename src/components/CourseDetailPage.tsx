@@ -27,9 +27,9 @@ export default function CourseDetailPage({ course, onBack }: CourseDetailPagePro
   };
 
   return (
-    <div id="course-detail-container" className="pt-20 bg-neutral-50/50 min-h-screen pb-16">
+    <div id="course-detail-container" className="pt-20 bg-gradient-to-b from-neutral-50 via-slate-50 to-[#faf7f2]/40 min-h-screen pb-16">
       {/* 1. HERO HEADER BANNER */}
-      <section id="course-detail-hero" className="bg-neutral-900 text-white py-12 lg:py-16 relative overflow-hidden">
+      <section id="course-detail-hero" className="bg-gradient-to-br from-neutral-950 via-neutral-900 to-[#0e273e] text-white py-12 lg:py-16 relative overflow-hidden">
         {/* Background mesh */}
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#1e40af_1px,transparent_1px)] [background-size:16px_16px]"></div>
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-800/10 rounded-full filter blur-3xl"></div>
@@ -57,7 +57,10 @@ export default function CourseDetailPage({ course, onBack }: CourseDetailPagePro
                 </span>
               </div>
 
-              <h1 className="font-serif font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight text-white tracking-tight">
+              <h1 
+                className="font-serif font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight text-white tracking-tight"
+                style={{ fontFamily: "'Times New Roman', Times, serif" }}
+              >
                 {course.title}
               </h1>
 
