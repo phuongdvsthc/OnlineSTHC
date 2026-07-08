@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, BookOpen, GraduationCap, PhoneCall, HelpCircle } from "lucide-react";
+import sthcLogo from "../assets/images/regenerated_image_1783479369142.png";
 
 interface NavbarProps {
   currentView: "home" | "courses" | "detail";
@@ -52,7 +53,7 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
             onClick={() => handleLinkClick("home")}
           >
             <img
-              src="/src/assets/images/regenerated_image_1783479369142.png"
+              src={sthcLogo}
               alt="STHC Logo"
               className="h-12 w-auto object-contain rounded group-hover:scale-105 transition-transform"
               referrerPolicy="no-referrer"

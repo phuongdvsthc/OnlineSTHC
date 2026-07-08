@@ -1,5 +1,6 @@
 import React from "react";
 import { Mail, Phone, MapPin, Award, Shield, Facebook, Youtube, ExternalLink } from "lucide-react";
+import sthcLogo from "../assets/images/regenerated_image_1783479369142.png";
 
 interface FooterProps {
   onNavigate: (view: "home" | "courses" | "detail", courseId?: string) => void;
@@ -16,7 +17,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           <div className="md:col-span-1.5 space-y-4">
             <div className="flex items-center space-x-3 cursor-pointer" onClick={() => onNavigate("home")}>
               <img
-                src="/src/assets/images/regenerated_image_1783479369142.png"
+                src={sthcLogo}
                 alt="STHC Logo"
                 className="object-contain rounded"
                 style={{ width: "180px", height: "80px" }}
