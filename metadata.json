@@ -1,0 +1,6 @@
+{
+  "name": "Saigontourist Online Learning",
+  "description": "Hệ thống học trực tuyến cao cấp chuẩn 5 sao cùng các chuyên gia đầu ngành từ Saigontourist.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
