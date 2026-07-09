@@ -10,7 +10,7 @@ import { Course } from "../types";
 import ConsultationForm from "./ConsultationForm";
 
 interface LandingPageProps {
-  onNavigate: (view: "home" | "courses" | "detail" | "admin", courseId?: string) => void;
+  onNavigate: (view: "home" | "courses" | "detail", courseId?: string, anchorId?: string) => void;
 }
 
 export default function LandingPage({ onNavigate }: LandingPageProps) {
@@ -29,7 +29,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
     { value: "5,000+", label: "Học viên đã học", desc: "Tốt nghiệp & có việc làm" },
     { value: "30+", label: "Khóa học cao cấp", desc: "Sát nhu cầu doanh nghiệp" },
     { value: "190+", label: "Giảng viên kỳ cựu", desc: "Hơn 15 năm kinh nghiệm" },
-    { value: "35+", label: "Năm truyền thống", desc: "Đại học & Cao đẳng Saigontourist" }
+    { value: "37+", label: "Năm truyền thống", desc: "Đào tạo nghề Saigontourist" }
   ];
 
   // Training objectives (6 cards)

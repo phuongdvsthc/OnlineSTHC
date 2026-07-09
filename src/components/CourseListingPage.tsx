@@ -4,7 +4,7 @@ import { courses, categories } from "../data/courses";
 import { Course } from "../types";
 
 interface CourseListingPageProps {
-  onNavigate: (view: "home" | "courses" | "detail" | "admin", courseId?: string) => void;
+  onNavigate: (view: "home" | "courses" | "detail", courseId?: string, anchorId?: string) => void;
 }
 
 export default function CourseListingPage({ onNavigate }: CourseListingPageProps) {

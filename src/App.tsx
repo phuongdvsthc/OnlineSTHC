@@ -23,13 +23,19 @@ export default function App() {
   // Handle scrolling to the pending anchor once the home view is active
   useEffect(() => {
     if (pendingAnchor) {
+      const isAlreadyOnHome = currentView === "home";
+      const delay = isAlreadyOnHome ? 50 : 380; // Wait for view transition if navigating from another view
+
       const timer = setTimeout(() => {
         const el = document.getElementById(pendingAnchor);
         if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          const yOffset = -90; // Offset to account for the sticky navbar height
+          const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
         }
         setPendingAnchor(null);
-      }, currentView === "home" ? 150 : 350); // Shorter wait if already on home, longer if transitioning
+      }, delay);
+
       return () => clearTimeout(timer);
     }
   }, [currentView, pendingAnchor]);
