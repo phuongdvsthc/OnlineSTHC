@@ -89,8 +89,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
               </div>
               
               <h1
-                className="font-serif font-extrabold text-4xl sm:text-5xl lg:text-6xl text-neutral-900 leading-[1.12] tracking-tight"
-                style={{ fontFamily: "Times New Roman", fontSize: "54px" }}
+                className="font-sans font-bold text-4xl sm:text-5xl lg:text-[54px] lg:leading-[1.12] text-neutral-900 tracking-tight"
               >
                 Học nghề đẳng cấp chuẩn 5 sao <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-amber-500">
@@ -400,8 +399,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                     </div>
 
                     <h3 
-                      className="font-serif font-bold text-lg sm:text-xl text-neutral-900 leading-snug group-hover:text-blue-800 transition-colors line-clamp-2 min-h-[52px]"
-                      style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                      className="font-sans font-bold text-lg sm:text-xl text-neutral-900 leading-snug group-hover:text-blue-800 transition-colors line-clamp-2 min-h-[52px]"
                     >
                       {course.title}
                     </h3>
@@ -456,8 +454,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
             <div className="lg:col-span-6 space-y-6">
               <div className="space-y-2">
                 <h2 
-                  className="font-serif font-bold text-3xl sm:text-4xl text-neutral-900 leading-tight"
-                  style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                  className="font-sans font-bold text-3xl sm:text-4xl text-neutral-900 leading-tight"
                 >
                   Trải Nghiệm Học Trực Tuyến Đỉnh Cao
                 </h2>
@@ -548,8 +545,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
             <h2 
-              className="font-serif font-bold text-3xl sm:text-4xl text-neutral-900"
-              style={{ fontFamily: "'Times New Roman', Times, serif" }}
+              className="font-sans font-bold text-3xl sm:text-4xl text-neutral-900"
             >
               Học Viên Nói Gì Về Chúng Tôi
             </h2>
@@ -659,8 +655,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
             <h2 
-              className="font-serif font-bold text-3xl sm:text-4xl text-neutral-900"
-              style={{ fontFamily: "'Times New Roman', Times, serif" }}
+              className="font-sans font-bold text-3xl sm:text-4xl text-neutral-900"
             >
               Đội Ngũ Giảng Viên Hướng Dẫn
             </h2>
@@ -684,8 +679,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
                 />
                 <div className="text-center space-y-1">
                   <h3 
-                    className="font-serif font-bold text-base sm:text-lg text-neutral-900"
-                    style={{ fontFamily: "'Times New Roman', Times, serif" }}
+                    className="font-sans font-bold text-base sm:text-lg text-neutral-900"
                   >
                     {inst.name}
                   </h3>
@@ -710,7 +704,7 @@ export default function LandingPage({ onNavigate }: LandingPageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Consultation Left Details */}
             <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
-              <h2 className="font-['Verdana'] font-bold text-3xl sm:text-4xl text-neutral-900 leading-tight text-left">Bắt Đầu Hành Trình Nghề Nghiệp Của Bạn Ngay Hôm Nay</h2>
+              <h2 className="font-sans font-bold text-3xl sm:text-4xl text-neutral-900 leading-tight text-left">Bắt Đầu Hành Trình Nghề Nghiệp Của Bạn Ngay Hôm Nay</h2>
               <p className="text-gray-650 text-sm sm:text-base leading-relaxed font-sans">
                 Đừng trì hoãn giấc mơ trở thành thợ làm bánh chuyên nghiệp, nghệ nhân pha chế thượng hạng hay nhà quản lý khách sạn danh giá. Hãy đăng ký thông tin ngay hôm nay để được liên hệ sớm nhất.
               </p>
